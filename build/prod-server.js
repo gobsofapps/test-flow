@@ -12,6 +12,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
 }));
+app.use(api);
+
 
 app.use(express.static('dist'));
 
