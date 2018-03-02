@@ -65,6 +65,7 @@
   .container {
     background-color: @background-main;
     color: @white;
+    height: 100vh;
   }
 
   header {
