@@ -30,7 +30,7 @@ module.exports = {
         fr: 'French Display Text',
       },
       defaultLang: 'en',
-      licenseNotificationUrl: 'https://bb98971f.ngrok.io/api/licenseNotify',
+      licenseNotificationUrl: 'https://usbankverified.herokuapp.com/api/licenseNotify',
       state: 'opaque state data',
     },
   },
