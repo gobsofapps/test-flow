@@ -5,17 +5,28 @@
     </header>
     <div class="verified">
       <div class="verified-icon"></div>
-      <h3>Identity Verified! You will be redirected to you account in a minute...</h3>
+      <h3>Identity Verified! You will be redirected to you account in a minute
+        <span class="dot">.</span>
+        <span class="dot">.</span>
+        <span class="dot">.</span>
+      </h3>
     </div>
   </div>
 </template>
 
 <script>
+  import { mapActions } from 'vuex';
   import BankHeader from '../../components/header';
 
   export default {
     components: {
       BankHeader,
+    },
+    ...mapActions({
+      getUser: 'getUserData',
+    }),
+    created() {
+      this.$store.dispatch('getUserData');
     },
   };
 </script>
@@ -52,6 +63,33 @@
     h3 {
       color: @title-color;
       text-align: center;
+    }
+  }
+
+  .dot {
+    animation-name: blink;
+    animation-duration: 1.4s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+  }
+
+  .dot:nth-child(2) {
+    animation-delay: .2s;
+  }
+
+  .dot:nth-child(3) {
+    animation-delay: .4s;
+  }
+
+  @keyframes blink {
+    0% {
+      opacity: .2;
+    }
+    20% {
+      opacity: 1;
+    }
+    100% {
+      opacity: .2;
     }
   }
 </style>

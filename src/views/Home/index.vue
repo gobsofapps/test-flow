@@ -1,39 +1,41 @@
 <template>
-  <div class="container">
+  <div class="container" >
     <header>
       <bank-header></bank-header>
     </header>
-    <main>
-      <div class="anonymous-avatar"></div>
-      <h2>Hello</h2>
-      <form>
-        <input class="form__input" type="text" placeholder="ENTER PERSONAL ID">
-        <div class="icon icon__lock"></div>
-        <div class="form__button">
-          <div class="icon icon__arrow"></div>
+    <transition appear name="fadeIn">
+      <main>
+        <div class="anonymous-avatar"></div>
+        <h2>Hello</h2>
+        <form>
+          <input class="form__input" type="text" placeholder="ENTER PERSONAL ID">
+          <div class="icon icon__lock"></div>
+          <div class="form__button">
+            <div class="icon icon__arrow"></div>
+          </div>
+        </form>
+        <div class="login-checkboxes">
+          <span>Remember Me</span>
+          <input type='checkbox' class='ios8-switch' id='rememberCheckbox'>
+          <label for='rememberCheckbox'></label>
         </div>
-      </form>
-      <div class="login-checkboxes">
-        <span>Remember Me</span>
-        <input type='checkbox' class='ios8-switch' id='rememberCheckbox'>
-        <label for='rememberCheckbox'></label>
-      </div>
-      <div class="login-checkboxes">
-        <span>Enable Touch ID</span>
-        <input type='checkbox' class='ios8-switch' id='touchIDCheckbox'>
-        <label for='touchIDCheckbox'></label>
-      </div>
-      <div class="login-management">
-        <div class="login-management__block">
-          <p class="with-border">Forgot ID?</p>
-          <div class="icon icon__map"></div>
+        <div class="login-checkboxes">
+          <span>Enable Touch ID</span>
+          <input type='checkbox' class='ios8-switch' id='touchIDCheckbox'>
+          <label for='touchIDCheckbox'></label>
         </div>
-        <div class="login-management__block">
-          <router-link to="/accounts">New User?</router-link>
-          <div class="icon icon__info"></div>
+        <div class="login-management">
+          <div class="login-management__block">
+            <p class="with-border">Forgot ID?</p>
+            <div class="icon icon__map"></div>
+          </div>
+          <div class="login-management__block">
+            <router-link to="/accounts">New User?</router-link>
+            <div class="icon icon__info"></div>
+          </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </transition>
     <footer>
       <div>Online privacy and security</div>
       <div>Legal Disclosures</div>
@@ -279,5 +281,24 @@
   }
   input[type="checkbox"].ios8-switch:checked + label:before {
     background: #55D069;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 20%, 0);
+      transform: translate3d(0, 20%, 0);
+    }
+
+    to {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .fadeIn-enter-active {
+    animation: fadeInUp .4s;
+    animation-timing-function: ease-in;
   }
 </style>

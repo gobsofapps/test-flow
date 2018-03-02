@@ -90,11 +90,22 @@
 </template>
 
 <script>
+  import { mapActions } from 'vuex';
   import BankHeader from '../../components/header';
 
+
   export default {
+    name: 'CheckingAccount',
     components: {
       BankHeader,
+    },
+    methods: {
+      ...mapActions([
+        'getSignInQRCode',
+      ]),
+    },
+    mounted() {
+      this.getSignInQRCode();
     },
   };
 </script>

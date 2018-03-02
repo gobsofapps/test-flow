@@ -3,9 +3,8 @@ import {
   USER_DATA_REQUEST,
   USER_DATA_REQUEST_SUCCEED,
   USER_DATA_REQUEST_FAILED,
-  USER_EMAIL_CHANGED,
-  USER_NAME_CHANGED,
 } from '../constants/mutation-types';
+import router from '../../router';
 
 const state = {
   userDataFetched: false,
@@ -20,12 +19,6 @@ const getters = {
 };
 
 const mutations = {
-  [USER_NAME_CHANGED](state, newName) {
-    state.name = newName;
-  },
-  [USER_EMAIL_CHANGED](state, newEmail) {
-    state.email = newEmail;
-  },
   [USER_DATA_REQUEST](state) {
     state.userDataFetched = false;
     state.userDataLoading = true;
@@ -35,21 +28,21 @@ const mutations = {
     state.userDataLoading = false;
   },
   [USER_DATA_REQUEST_SUCCEED](state, userData) {
-    console.log(userData);
     state.userDataFetched = true;
     state.userDataLoading = false;
-    state.userData = userData.bankdata;
+    state.userData = userData;
   },
 };
 
 const actions = {
-  getUserData({ commit, state }, sessionState) {
+  getUserData({ commit, state }) {
     if (!state.userDataFetched) {
       commit('USER_DATA_REQUEST');
-      axios.post('/get-user', { sessionState })
+      axios.post('/api/get-user')
         .then((response) => {
           if (response.data) {
             commit('USER_DATA_REQUEST_SUCCEED', response.data);
+            router.push('/profile');
           }
         })
         .catch((error) => {

@@ -9,7 +9,7 @@
         <div class="checking-header__text">
           <h4>Easy Checking</h4>
           <h1>A basic checking account with great standard features</h1>
-          <button class="button violet-button">Apply with Verified.Me</button>
+          <a :href="QR.signInQRCode" class="button violet-button">Apply with Verified.Me</a>
           <button class="button red-button">Apply</button>
         </div>
       </div>
@@ -37,11 +37,17 @@
 </template>
 
 <script>
+  import { mapState } from 'vuex';
   import BankHeader from '../../components/header';
 
   export default {
     components: {
       BankHeader,
+    },
+    computed: {
+      ...mapState([
+        'QR',
+      ]),
     },
   };
 </script>

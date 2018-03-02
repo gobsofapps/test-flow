@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container" v-if="userData">
     <header>
       <nav>
         <div class="menu">
@@ -16,10 +16,10 @@
       <div class="info-block">
         <div class="info-left">
           <h6>Contact Information</h6>
-          <p>Philip</p>
-          <p>Lamm</p>
-          <p>t**********@gmail.com</p>
-          <p>(510) 555-1212</p>
+          <p>{{userData.given_name}}</p>
+          <p>{{userData.family_name}}</p>
+          <p>{{userData.email}}</p>
+          <p>{{userData.phone_number}}</p>
         </div>
         <div class="info-right">
           <p>Edit</p>
@@ -29,9 +29,9 @@
       <div class="info-block">
         <div class="info-left">
           <h6>Home Address</h6>
-          <p>1219 15th Ave</p>
-          <p>SAN FRANCISCO, CA</p>
-          <p>94122</p>
+          <p>{{userData.address.street_address}}</p>
+          <p>{{userData.address.locality + ' ' + userData.address.country}}</p>
+          <p>{{userData.address.postal_code}}</p>
         </div>
         <div class="info-right">
           <p>Edit</p>
@@ -64,7 +64,14 @@
 </template>
 
 <script>
+  import { mapGetters } from 'vuex';
+
   export default {
+    computed: {
+      ...mapGetters([
+        'userData',
+      ]),
+    },
   };
 </script>
 
