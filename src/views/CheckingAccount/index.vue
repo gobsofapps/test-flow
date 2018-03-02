@@ -117,6 +117,11 @@
 
   header {
     height: 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
   }
 
   .container {
@@ -145,7 +150,6 @@
     background-attachment: fixed;
     color: @white;
     padding-left: 40px;
-    margin-top: -40px;
     z-index: -1;
   }
 

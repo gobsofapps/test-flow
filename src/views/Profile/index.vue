@@ -84,7 +84,15 @@
 
   header {
     color: @white;
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+  }
+
+  main {
+    margin-top: 125px;
   }
 
   nav {

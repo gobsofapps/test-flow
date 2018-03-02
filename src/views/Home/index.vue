@@ -1,5 +1,5 @@
 <template>
-  <div class="container" >
+  <div class="container">
     <header>
       <bank-header></bank-header>
     </header>
@@ -49,6 +49,7 @@
   import BankHeader from '../../components/header';
 
   export default {
+    name: 'Home',
     components: {
       BankHeader,
     },
@@ -65,8 +66,14 @@
     background-color: @background-main;
     color: @white;
   }
+
   header {
     height: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
   }
   .anonymous-avatar {
     background-image: url('../../assets/avatar.png');
@@ -80,6 +87,7 @@
     background-repeat: no-repeat;
   }
   main {
+    margin-top: 60px;
     padding: 10px 20px;
   }
   h2 {

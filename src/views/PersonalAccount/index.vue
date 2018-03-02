@@ -33,10 +33,17 @@
   @title-color: #0c2074;
 
   header {
+    position: fixed;
     height: 40px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    -webkit-transform: translateZ(0);
   }
   main {
     padding: 0 10px;
+    margin-top: 40px;
   }
 
   h3 {

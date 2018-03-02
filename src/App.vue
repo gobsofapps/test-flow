@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="app">
     <transition name="router" mode="out-in">
-      <router-view class="view router-view"></router-view>
+      <router-view></router-view>
     </transition>
   </div>
 </template>
@@ -32,15 +32,5 @@
 
   .app {
     min-height: 100%;
-  }
-
-  .router-view {
-    transition: all .5s ease;
-    min-height: 100vh;
-  }
-
-  .router-enter, .router-leave {
-    opacity: 0;
-    transform: translate3d(20px, 0, 0);
   }
 </style>

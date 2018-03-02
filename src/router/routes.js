@@ -1,46 +1,53 @@
 import Empty from '@/views/Empty';
+import Home from '@/views/Home';
+import Accounts from '@/views/Accounts';
+import PersonalAccount from '@/views/PersonalAccount';
+import CheckingAccount from '@/views/CheckingAccount';
+import EasyChecking from '@/views/EasyChecking';
+import Profile from '@/views/Profile';
+import UserVerified from '@/views/Profile/user-verified';
 
 export default [
   {
     path: '/',
     components: {
-      default: () => import('@/views/Home'),
+      default: Home,
     },
   },
   {
     path: '/accounts',
     components: {
-      default: () => import('@/views/Accounts'),
+      default: Accounts,
     },
   },
   {
     path: '/personal-account',
     components: {
-      default: () => import('@/views/PersonalAccount'),
+      default: PersonalAccount,
     },
   },
   {
     path: '/checking-account',
     components: {
-      default: () => import('@/views/CheckingAccount'),
+      default: CheckingAccount,
     },
   },
   {
     path: '/easy-checking',
     components: {
-      default: () => import('@/views/EasyChecking'),
+      default: EasyChecking,
     },
   },
   {
     path: '/profile',
     components: {
-      default: () => import('@/views/Profile'),
+      default: Profile,
     },
   },
   {
     path: '/user-verified',
     components: {
-      default: () => import('@/views/Profile/user-verified'),
+      default: UserVerified,
     },
   },
   {
