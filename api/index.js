@@ -25,8 +25,12 @@ router.post('/api/licenseRequest', (req, res) => {
 
 router.post('/api/licenseNotify', (req, res) => {
   licenseID = req.body.license;
+  const respondURL = { url: redirectURL + '/user-verified' };
+  res.setHeader('Content-Type', 'application/json');
 
-  res.status(200).send({"url": redirectURL + "/user-verified" });
+  console.log(respondURL);
+
+  res.status(200).send(JSON.stringify(respondURL));
 });
 
 router.post('/api/get-user', (req, res) => {
