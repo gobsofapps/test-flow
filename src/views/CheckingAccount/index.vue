@@ -1,8 +1,5 @@
 <template>
   <div class="container">
-    <header>
-      <bank-header></bank-header>
-    </header>
     <div class="hero-image-block">
       <div class="hero-image-block__text">
         <h3>Checking Accounts</h3>

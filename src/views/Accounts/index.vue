@@ -1,8 +1,5 @@
 <template>
   <div class="container">
-    <header>
-      <bank-header></bank-header>
-    </header>
     <main>
       <h3>Enroll to Access Your Accounts</h3>
       <p class="description">Activate your account - it only takes a few minutes</p>

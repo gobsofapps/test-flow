@@ -1,15 +1,12 @@
 <template>
   <div class="container">
-    <header>
-      <bank-header></bank-header>
-    </header>
     <main>
       <div class="checking-header">
         <div class="checking-header__image"></div>
         <div class="checking-header__text">
           <h4>Easy Checking</h4>
           <h1>A basic checking account with great standard features</h1>
-          <a :href="QR.signInQRCode" class="button violet-button">Apply with Verified.Me</a>
+          <a :href="QR.signInQRCode" class="button violet-button"><span>Apply with</span> <div class="verified_logo"></div>Verified.Me</a>
           <button class="button red-button">Apply</button>
         </div>
       </div>
@@ -72,7 +69,7 @@
   }
 
   .checking-header {
-    margin: 20px 0 60px;
+    margin: 60px 0 60px;
   }
 
   .checking-header__image {
@@ -110,8 +107,10 @@
 
     .button {
       color: #fff;
-      display: block;
-      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px;
       vertical-align: middle;
       font-size: 18px;
       line-height: 20px;
@@ -121,12 +120,15 @@
       text-align: center;
       font-weight: bold;
       cursor: pointer;
-      margin-bottom: 8px;
+      margin: 0 auto 15px;
+      width: 100%;
+      max-width: 600px;
+      border: 0;
+      box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, .4);
     }
 
     .red-button {
       background-color: lighten(#d93f4d, 5%);
-      width: 200px;
     }
 
     .violet-button {
@@ -156,6 +158,16 @@
     font-style: normal;
     font-size: 28px;
     line-height: 31px;
+  }
+
+  .verified_logo {
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url('../../assets/icons/securekey_logo.svg');
+    height: 50px;
+    width: 50px;
+    margin-right: -6px;
   }
 
 

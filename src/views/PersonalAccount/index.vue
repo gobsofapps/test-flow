@@ -1,8 +1,5 @@
 <template>
   <div class="container">
-    <header>
-      <bank-header></bank-header>
-    </header>
     <main>
       <h3>About your account</h3>
       <p class="description">Do you have a U.S. bank small business checking or saving account?</p>
@@ -12,18 +9,27 @@
       </section>
 
       <section class="accounts">
-        <router-link to="/checking-account" class="account open-account">Open an account now. <div class="icon__arrow"></div></router-link>
+        <router-link to="/easy-checking" class="account open-account">Open an account now. <div class="icon__arrow"></div></router-link>
       </section>
     </main>
   </div>
 </template>
 
 <script>
+  import { mapActions } from 'vuex';
   import BankHeader from '../../components/header';
 
   export default {
     components: {
       BankHeader,
+    },
+    methods: {
+      ...mapActions([
+        'getSignInQRCode',
+      ]),
+    },
+    mounted() {
+      this.getSignInQRCode();
     },
   };
 </script>

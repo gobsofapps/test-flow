@@ -2,7 +2,6 @@ import Empty from '@/views/Empty';
 import Home from '@/views/Home';
 import Accounts from '@/views/Accounts';
 import PersonalAccount from '@/views/PersonalAccount';
-import CheckingAccount from '@/views/CheckingAccount';
 import EasyChecking from '@/views/EasyChecking';
 import Profile from '@/views/Profile';
 import UserVerified from '@/views/Profile/user-verified';
@@ -24,12 +23,6 @@ export default [
     path: '/personal-account',
     components: {
       default: PersonalAccount,
-    },
-  },
-  {
-    path: '/checking-account',
-    components: {
-      default: CheckingAccount,
     },
   },
   {

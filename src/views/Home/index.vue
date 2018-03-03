@@ -1,7 +1,6 @@
 <template>
   <div class="container">
     <header>
-      <bank-header></bank-header>
     </header>
     <transition appear name="fadeIn">
       <main>
@@ -65,7 +64,7 @@
   .container {
     background-color: @background-main;
     color: @white;
-    height: 100vh;
+    height: 100%;
   }
 
   header {
@@ -88,8 +87,7 @@
     background-repeat: no-repeat;
   }
   main {
-    margin-top: 60px;
-    padding: 10px 20px;
+    padding: 60px 20px 10px;
   }
   h2 {
     font-weight: 400;

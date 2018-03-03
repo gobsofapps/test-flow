@@ -1,8 +1,5 @@
 <template>
   <div class="container">
-    <header>
-      <bank-header></bank-header>
-    </header>
     <div class="verified">
       <div class="verified-icon"></div>
       <h3>Identity Verified! You will be redirected to you account in a minute
