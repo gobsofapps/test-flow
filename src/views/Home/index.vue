@@ -65,6 +65,7 @@
     background-color: @background-main;
     color: @white;
     height: 100%;
+    min-height: 100vh;
   }
 
   header {
