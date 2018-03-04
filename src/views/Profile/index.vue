@@ -198,5 +198,7 @@
     margin: 20px auto;
     display: block;
     box-shadow: -2px 3px 5px 0 rgba(0, 0, 0, .2);
+    text-align: center;
+    text-decoration: none;
   }
 </style>

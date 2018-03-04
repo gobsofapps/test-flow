@@ -4,21 +4,21 @@
       <h3>Welcome, {{userData.given_name}}!</h3>
       <p>Choose one of the options below:</p>
       <div class="info-block">
-        <h5>Past Transactions</h5>
+        <h4>Past Transactions</h4>
         <div class="arrow-icon"></div>
       </div>
 
       <div class="info-block">
-        <h5>My payments</h5>
+        <h4>My payments</h4>
         <div class="arrow-icon"></div>
       </div>
 
       <div class="info-block">
-        <h5>Deposits</h5>
+        <h4>Deposits</h4>
         <div class="arrow-icon"></div>
       </div>
       <div class="info-block">
-        <h5>Recharge mobile</h5>
+        <h4>Recharge mobile</h4>
         <div class="arrow-icon"></div>
       </div>
     </main>
