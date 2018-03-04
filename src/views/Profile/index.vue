@@ -1,18 +1,12 @@
 <template>
   <div class="container" v-if="userData">
     <header>
-      <nav>
-        <div class="menu">
-          <div class="menu-icon"></div>
-          <span>Menu</span>
-        </div>
-      </nav>
       <div class="submenu">
-        Does everything look correct?
+        <div class="profile-icon"></div>
       </div>
-      <div class="profile-icon"></div>
     </header>
     <main>
+      <h3>Does everything look correct?</h3>
       <div class="info-block">
         <div class="info-left">
           <h6>Contact Information</h6>
@@ -48,17 +42,18 @@
         </div>
       </div>
 
-      <div class="info-block">
-        <div class="info-left">
-          <h6>Identification</h6>
-          <p>08/08/XXXX</p>
-          <p>XXXX-XX-7876</p>
-          <p>US Driver's License</p>
-        </div>
-        <div class="info-right">
-          <p>Edit</p>
-        </div>
-      </div>
+      <!--<div class="info-block">-->
+        <!--<div class="info-left">-->
+          <!--<h6>Identification</h6>-->
+          <!--<p>08/08/XXXX</p>-->
+          <!--<p>XXXX-XX-7876</p>-->
+          <!--<p>US Driver's License</p>-->
+        <!--</div>-->
+        <!--<div class="info-right">-->
+          <!--<p>Edit</p>-->
+        <!--</div>-->
+      <!--</div>-->
+      <router-link class='confirm-button' to="/account">Confirm</router-link>
     </main>
   </div>
 </template>
@@ -80,7 +75,8 @@
   @title-color: #0c2074;
   @white: #ffffff;
   @nav: #124cb2;
-  @submenu: #94dbff;
+  @submenu: rgb(23, 82, 152);
+  @black: rgba(85, 85, 85, 1);
 
   header {
     color: @white;
@@ -92,7 +88,8 @@
   }
 
   main {
-    margin-top: 125px;
+    margin-top: 70px;
+    padding: 0px 5px;
   }
 
   nav {
@@ -118,14 +115,26 @@
   }
 
   .submenu {
-    background-color: @submenu;
-    height: 80px;
+    background-color: @white;
+    height: 60px;
     display: flex;
     align-items: flex-end;
     justify-content: center;
     font-size: 18px;
-    color: @nav;
-    padding-bottom: 20px;
+    padding: 10px 0;
+    color: @white;
+  }
+
+  h3 {
+    color: #007cbe;
+    display: block;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 20px;
+    padding-bottom: 3px;
+    line-height: 25px;
+    text-align: center;
+    border-bottom: 1px solid #e7e7e7;
   }
 
   .profile-icon {
@@ -133,14 +142,9 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-image: url('../../assets/icons/profile-icon.svg');
-    width: 60px;
-    height: 60px;
-    left: 0;
-    top: -30px;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    position: absolute;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
   }
 
   .info-block {
@@ -152,7 +156,8 @@
     width: 100%;
     max-width: 800px;
     padding: 10px;
-    margin: 0 auto 20px;
+    margin: 0 auto 10px;
+    color: @black;
 
   }
 
@@ -165,7 +170,8 @@
     }
 
     p {
-      margin: 8px 0;
+      margin: 4px 0;
+      font-size: 14px;
     }
   }
 
@@ -175,6 +181,22 @@
       color: #5d6c7b;
       text-decoration: underline;
       cursor: pointer;
+      font-size: 14px;
     }
+  }
+
+  .confirm-button {
+    padding: 15px;
+    background-color: #2ECC40;
+    color: @white;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: .7px;
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+    display: block;
+    box-shadow: -2px 3px 5px 0 rgba(0, 0, 0, .2);
   }
 </style>

@@ -49,7 +49,7 @@
   }
   main {
     padding: 0 10px;
-    margin-top: 40px;
+    margin-top: 10px;
   }
 
   h3 {

@@ -25,7 +25,7 @@ router.post('/api/licenseRequest', (req, res) => {
 
 router.post('/api/licenseNotify', (req, res) => {
   licenseID = req.body.license;
-  const respondURL = { url: 'usbankverified://open.my.app?url_launch=' + redirectURL + '/user-verified' };
+  const respondURL = { url: redirectURL + '/user-verified' };
   res.setHeader('Content-Type', 'application/json');
 
   console.log(respondURL);

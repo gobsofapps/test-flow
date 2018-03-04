@@ -5,6 +5,8 @@ import PersonalAccount from '@/views/PersonalAccount';
 import EasyChecking from '@/views/EasyChecking';
 import Profile from '@/views/Profile';
 import UserVerified from '@/views/Profile/user-verified';
+import RedirectPage from '@/views/RedirectPage';
+import Account from '@/views/Profile/account';
 
 export default [
   {
@@ -38,9 +40,21 @@ export default [
     },
   },
   {
+    path: '/account',
+    components: {
+      default: Account,
+    },
+  },
+  {
     path: '/user-verified',
     components: {
       default: UserVerified,
+    },
+  },
+  {
+    path: '/redirect',
+    components: {
+      default: RedirectPage,
     },
   },
   {

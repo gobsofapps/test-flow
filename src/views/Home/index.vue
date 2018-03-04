@@ -2,7 +2,7 @@
   <div class="container">
     <header>
     </header>
-    <transition appear name="fadeIn">
+    <transition appear name="fadeIn" class="content">
       <main>
         <div class="anonymous-avatar"></div>
         <h2>Hello</h2>
@@ -66,6 +66,8 @@
     color: @white;
     height: 100%;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
   }
 
   header {
@@ -76,6 +78,7 @@
     width: 100%;
     z-index: 100;
   }
+
   .anonymous-avatar {
     background-image: url('../../assets/avatar.png');
     width: 100px;
@@ -88,7 +91,8 @@
     background-repeat: no-repeat;
   }
   main {
-    padding: 60px 20px 10px;
+    padding: 10px 20px;
+    flex: 1 0 auto;
   }
   h2 {
     font-weight: 400;
@@ -213,6 +217,7 @@
     margin: 0 auto;
     width: 300px;
     text-align: center;
+    flex-shrink: 0;
 
     div {
       text-decoration: underline;
