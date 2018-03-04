@@ -11,7 +11,6 @@
     },
     methods: {
       redirectToURL() {
-        console.log('here');
         window.location.href = 'usbankverified://open.my.app?url_launch=https://usbankverified.herokuapp.com/user-verified';
       },
     },
