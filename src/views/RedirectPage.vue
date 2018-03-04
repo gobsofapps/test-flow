@@ -7,7 +7,7 @@
 
   export default {
     mounted() {
-      //      window.location.href = 'usbankverified://open.my.app?url_launch=https://usbankverified.herokuapp.com/user-verified';
+      window.location.href = 'usbankverified://open.my.app?url_launch=https://usbankverified.herokuapp.com/user-verified';
     },
     methods: {
       redirectToURL() {
@@ -18,6 +18,7 @@
 </script>
 <style scoped>
   .redirect-button {
+    display: none;
     position: absolute;
     left: 0;
     right: 0;
