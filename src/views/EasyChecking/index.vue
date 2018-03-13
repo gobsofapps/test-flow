@@ -126,14 +126,14 @@
       vertical-align: middle;
       font-size: 15px;
       line-height: 20px;
-      padding: 15px;
+      padding: 2px;
       position: relative;
       text-decoration: none !important;
       text-align: center;
       font-weight: bold;
       cursor: pointer;
-      margin: 0 auto 15px;
-      width: 49%;
+      margin: 0 auto 20px;
+      width: 40%;
       min-width: 150px;
       border: 0;
       box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, .4);
