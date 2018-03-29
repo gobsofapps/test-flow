@@ -1,6 +1,6 @@
-require('./check-versions')();
+require('../build/check-versions')();
 
-const config = require('../config');
+const config = require('../config/index');
 
 if (!process.env.NODE_ENV) {
   process.env.NODE_ENV = JSON.parse(config.dev.env.NODE_ENV);
@@ -14,9 +14,14 @@ const webpack = require('webpack');
 const proxyMiddleware = require('http-proxy-middleware');
 const history = require('connect-history-api-fallback');
 const webpackConfig = (process.env.NODE_ENV === 'testing' || process.env.NODE_ENV === 'production')
-  ? require('./webpack.prod.conf')
-  : require('./webpack.dev.conf');
-const api = require('../api');
+  ? require('../build/webpack.prod.conf')
+  : require('../build/webpack.dev.conf');
+const verifiedMeAPI = require('./api');
+const oidcAPI = require('./oidc');
+const oidcClient = require('./oidc/oidcClient');
+
+// create OIDC Client
+oidcClient.createClient();
 
 
 // default port where dev server listens for incoming traffic
@@ -34,7 +39,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
 }));
-app.use(api);
+app.use(verifiedMeAPI);
+app.use(oidcAPI);
 
 const devMiddleware = require('webpack-dev-middleware')(compiler, {
   publicPath: webpackConfig.output.publicPath,

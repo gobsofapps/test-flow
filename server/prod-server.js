@@ -1,30 +1,34 @@
 const path = require('path');
 const express = require('express');
-const request = require('request');
-const http = require('http');
 const bodyParser = require('body-parser');
 const history = require('connect-history-api-fallback');
+
 const app = express();
-const api = require('../api');
+const verifiedMeAPI = require('./api');
+const oidcAPI = require('./oidc');
+const oidcClient = require('./oidc/oidcClient');
+
+// create OIDC Client
+oidcClient.createClient();
 
 app.use(history());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
-  extended: true
+  extended: true,
 }));
-app.use(api);
-
+app.use(verifiedMeAPI);
+app.use(oidcAPI);
 
 app.use(express.static('dist'));
 
 const port = process.env.PORT || 3000;
 
-app.get('*', function(req, res) {
+app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../dist/index.html'));
 });
 
 
-app.listen(port, function() {
-  console.info('Our app is running on http://localhost:' + port);
+app.listen(port, () => {
+  console.info(`Our app is running on http://localhost: ${port}`);
 });
 

@@ -9,10 +9,9 @@
           <h3>Open Account with</h3>
           <div class="buttons-container">
             <a :href="QR.signInQRCode" class="button violet-button">
-              <div class="verified_logo"></div>
-              Verified.Me
+              bankID
             </a>
-            <button class="button red-button">Continue to form</button>
+            <button @click='authorizeUser()' class="button red-button">Continue to form</button>
           </div>
         </div>
       </div>
@@ -51,6 +50,11 @@
       ...mapState([
         'QR',
       ]),
+    },
+    methods: {
+      authorizeUser() {
+        this.$store.dispatch('authorizeUser');
+      },
     },
   };
 </script>
@@ -126,7 +130,7 @@
       vertical-align: middle;
       font-size: 15px;
       line-height: 20px;
-      padding: 2px;
+      padding: 10px;
       position: relative;
       text-decoration: none !important;
       text-align: center;

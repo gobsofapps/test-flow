@@ -1,6 +1,6 @@
 const express = require('express');
 const rp = require('request-promise');
-const requestsConfig = require('../requestsConfig');
+const requestsConfig = require('../../requestsConfig');
 
 const router = express.Router();
 const postRequestOptions = {

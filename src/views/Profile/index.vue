@@ -23,9 +23,9 @@
       <div class="info-block">
         <div class="info-left">
           <h6>Home Address</h6>
-          <p>{{userData.address.street_address}}</p>
-          <p>{{userData.address.locality + ' ' + userData.address.country}}</p>
-          <p>{{userData.address.postal_code}}</p>
+          <p>{{userData.address ? userData.address.street_address : userData.street_address}}</p>
+          <p>{{userData.address ? userData.address.country : userData.country}}</p>
+          <p>{{userData.address ? userData.address.postal_code : userData.postal_code }}</p>
         </div>
         <div class="info-right">
           <p>Edit</p>
