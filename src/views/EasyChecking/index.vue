@@ -8,10 +8,10 @@
           <h1>A basic checking account with great standard features</h1>
           <h3>Open Account with</h3>
           <div class="buttons-container">
-            <a :href="QR.signInQRCode" class="button violet-button">
+            <div @click='authorizeUser()' class="button violet-button">
               bankID
-            </a>
-            <button @click='authorizeUser()' class="button red-button">Continue to form</button>
+            </div>
+            <button class="button red-button">Continue to form</button>
           </div>
         </div>
       </div>
