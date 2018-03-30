@@ -1,9 +1,6 @@
 <template>
   <div class="container">
     <main>
-      <header>
-        <bank-header></bank-header>
-      </header>
       <div class="checking-header">
         <div class="checking-header__image"></div>
         <div class="checking-header__text">
@@ -83,7 +80,7 @@
   }
 
   .checking-header {
-    margin: 60px 0;
+    margin: 10px 0;
   }
 
   .checking-header__image {
