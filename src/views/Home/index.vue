@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <header>
+      <bank-header/>
     </header>
     <transition appear name="fadeIn" class="content">
       <main>
@@ -91,7 +92,7 @@
     background-repeat: no-repeat;
   }
   main {
-    padding: 10px 20px;
+    padding: 65px 20px 0px;
     flex: 1 0 auto;
   }
   h2 {
@@ -213,7 +214,7 @@
 
   footer {
     font-size: 12px;
-    padding: 15px;
+    padding: 0px 15px 15px;
     margin: 0 auto;
     width: 300px;
     text-align: center;

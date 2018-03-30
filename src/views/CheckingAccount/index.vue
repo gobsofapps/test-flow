@@ -11,6 +11,9 @@
       </div>
     </div>
     <main>
+      <header>
+        <bank-header></bank-header>
+      </header>
       <section class="options">
         <div class="option">
           <h3>I want more ways to save.</h3>

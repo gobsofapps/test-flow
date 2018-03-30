@@ -1,6 +1,9 @@
 <template>
   <div class="container">
     <main>
+      <header>
+        <bank-header></bank-header>
+      </header>
       <h3>Enroll to Access Your Accounts</h3>
       <p class="description">Activate your account - it only takes a few minutes</p>
       <section class="accounts">
@@ -39,7 +42,7 @@
   }
 
   h3 {
-    margin: 5px 0 10px;
+    margin: 50px 0 10px;
     color: @title-color;
     font-weight: 400;
   }

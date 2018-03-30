@@ -1,6 +1,9 @@
 <template>
   <div class="container" v-if="userData">
     <main>
+      <header>
+        <bank-header></bank-header>
+      </header>
       <h3>Welcome, {{userData.given_name}}!</h3>
       <p>Choose one of the options below:</p>
       <div class="info-block">
@@ -27,8 +30,12 @@
 
 <script>
   import { mapGetters } from 'vuex';
+  import BankHeader from '../../components/header';
 
   export default {
+    components: {
+      BankHeader,
+    },
     computed: {
       ...mapGetters([
         'userData',
@@ -51,6 +58,14 @@
     padding: 0px 5px;
   }
 
+  header {
+    height: 40px;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+  }
 
   h3 {
     color: #007cbe;
@@ -61,6 +76,7 @@
     padding-bottom: 3px;
     padding-left: 20px;
     line-height: 25px;
+    margin-top: 50px;
     border-bottom: 1px solid #e7e7e7;
   }
 

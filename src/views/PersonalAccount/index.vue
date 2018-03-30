@@ -1,6 +1,9 @@
 <template>
   <div class="container">
     <main>
+      <header>
+        <bank-header></bank-header>
+      </header>
       <h3>About your account</h3>
       <p class="description">Do you have a U.S. bank small business checking or saving account?</p>
       <section class="accounts">
@@ -53,7 +56,7 @@
   }
 
   h3 {
-    margin: 5px 0 10px;
+    margin: 50px 0 10px;
     color: @title-color;
     font-weight: 400;
   }

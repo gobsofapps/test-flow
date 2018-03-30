@@ -1,6 +1,9 @@
 <template>
   <div class="container">
     <main>
+      <header>
+        <bank-header></bank-header>
+      </header>
       <div class="checking-header">
         <div class="checking-header__image"></div>
         <div class="checking-header__text">
@@ -66,6 +69,11 @@
 
   header {
     height: 40px;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1000;
   }
 
   .container {
@@ -74,12 +82,8 @@
     line-height: 27px;
   }
 
-  main {
-    padding: 0 10px;
-  }
-
   .checking-header {
-    margin: 30px 0;
+    margin: 60px 0;
   }
 
   .checking-header__image {
