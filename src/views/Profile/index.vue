@@ -1,6 +1,7 @@
 <template>
   <div class="container" v-if="userData">
     <header>
+      <bank-header></bank-header>
       <div class="submenu">
         <div class="profile-icon"></div>
       </div>
@@ -60,8 +61,12 @@
 
 <script>
   import { mapGetters } from 'vuex';
+  import BankHeader from '../../components/header';
 
   export default {
+    components: {
+      BankHeader,
+    },
     computed: {
       ...mapGetters([
         'userData',
@@ -85,6 +90,7 @@
     left: 0;
     width: 100%;
     z-index: 100;
+    height: 40px;
   }
 
   main {
@@ -121,7 +127,7 @@
     align-items: flex-end;
     justify-content: center;
     font-size: 18px;
-    padding: 10px 0;
+    padding: 14px 0 10px;
     color: @white;
   }
 
@@ -135,6 +141,7 @@
     line-height: 25px;
     text-align: center;
     border-bottom: 1px solid #e7e7e7;
+    margin-top: 100px;
   }
 
   .profile-icon {
